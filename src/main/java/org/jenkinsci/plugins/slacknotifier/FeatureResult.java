@@ -12,19 +12,19 @@ public class FeatureResult {
 	public String toString() {
 		return this.name + "=" + this.passPercentage;
 	}
-	
+
 	public String getName() {
 		return this.name;
 	}
-	
+
 	public String getFeatureUri() {
 		return this.name.replace(".feature", "-feature") + ".html";
 	}
-	
+
 	public String getDisplayName() {
 		return this.name.replaceAll("_", " ").replace(".feature", "");
 	}
-	
+
 	public int getPassPercentage() {
 		return this.passPercentage;
 	}

@@ -11,29 +11,29 @@ public class CucumberResult {
 	final List<FeatureResult> featureResults;
 	final int passPercentage;
 	final int totalScenarios;
-	
+
 	public CucumberResult(List<FeatureResult> featureResults, int totalScenarios, int passPercentage) {
 		this.featureResults = featureResults;
 		this.totalScenarios = totalScenarios;
 		this.passPercentage = passPercentage;
 	}
-	
+
 	public int getPassPercentage() {
 		return this.passPercentage;
 	}
-	
+
 	public int getTotalFeatures() {
 		return this.featureResults.size();
 	}
-	
+
 	public int getTotalScenarios() {
 		return this.totalScenarios;
 	}
-	
+
 	public List<FeatureResult> getFeatureResults() {
 		return this.featureResults;
 	}
-	
+
 	public String toSlackMessage(final String jobName,
 			final int buildNumber, final String channel, final String jenkinsUrl, final String extra) {
 		final JsonObject json = new JsonObject();
@@ -66,7 +66,7 @@ public class CucumberResult {
 		s.append("/");
 		return s.toString();
 	}
-	
+
 	public String toHeader(final String jobName, final int buildNumber, final String jenkinsUrl, final String extra) {
 		StringBuilder s = new StringBuilder();
 		if (StringUtils.isNotEmpty(extra)) {
@@ -83,11 +83,11 @@ public class CucumberResult {
 		s.append(">");
 		return s.toString();
 	}
-	
+
 	private void addCaption(final JsonObject json, final int buildNumber, final String jobName, final String jenkinsUrl, final String extra) {
 		json.addProperty("pretext", toHeader(jobName, buildNumber, jenkinsUrl, extra));
 	}
-	
+
 	private void addColourAndIcon(JsonObject json, String good, String value) {
 		json.addProperty("color", good);
 		json.addProperty("icon_emoji", value);
@@ -111,7 +111,7 @@ public class CucumberResult {
 		return fields;
 	}
 
-	
+
 	private JsonObject shortObject(final String value) {
 		JsonObject obj = new JsonObject();
 		obj.addProperty("value", value);

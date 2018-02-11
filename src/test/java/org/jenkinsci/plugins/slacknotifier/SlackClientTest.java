@@ -29,7 +29,7 @@ public class SlackClientTest {
 		assertEquals(8, result.getTotalScenarios());
 		assertEquals(8, result.getTotalFeatures());
 		assertEquals(100, result.getPassPercentage());
-		
+
 		String slackMessage = result.toSlackMessage("test-job", 7, "channel", "http://jenkins:8080/", null);
 		assertNotNull(slackMessage);
 		assertTrue(slackMessage.contains("<http://jenkins:8080/job/test-job/7/cucumber-html-reports/validate_gerrit_home_page-feature.html|validate gerrit home page>"));
@@ -49,7 +49,7 @@ public class SlackClientTest {
 		String slackMessage = result.toSlackMessage("test-job", 7, "channel", "http://jenkins:8080/", null);
 		assertNotNull(slackMessage);
 	}
-	
+
 	@Test
 	public void canGenerateFullFailedSlackMessage() throws FileNotFoundException {
 		JsonElement element = loadTestResultFile("failed-result.json");
@@ -73,7 +73,7 @@ public class SlackClientTest {
 		assertEquals(1, result.getTotalFeatures());
 		assertEquals(87, result.getPassPercentage());
 	}
-	
+
 	@Test
 	public void canGenerateGoodMessage() {
 		String slackMessage = successfulResult().toSlackMessage("test-job", 1, "channel", "http://jenkins:8080/", null);
@@ -107,15 +107,15 @@ public class SlackClientTest {
 		final JsonReader jsonReader = new JsonReader(new InputStreamReader(stream));
 		return gson.fromJson(jsonReader, JsonElement.class);
 	}
-	
+
 	private CucumberResult successfulResult() {
 		return new CucumberResult(Arrays.asList(new FeatureResult("Dummy Test", 100)),1,100);
 	}
-	
+
 	private CucumberResult badResult() {
 		return new CucumberResult(Arrays.asList(new FeatureResult("Dummy Test", 0)),1,0);
 	}
-	
+
 	private CucumberResult marginalResult() {
 		return new CucumberResult(Arrays.asList(new FeatureResult("Dummy Test", 99)),1,99);
 	}
