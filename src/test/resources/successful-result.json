@@ -52,7 +52,7 @@
         "type": "scenario"
       }
     ],
-    "uri": "validate_confluence_home_page.feature"
+    "uri": "features/validate_confluence_home_page.feature"
   },
   {
     "id": "validate-gerrit-home-page",
@@ -107,7 +107,7 @@
         "type": "scenario"
       }
     ],
-    "uri": "validate_gerrit_home_page.feature"
+    "uri": "features/validate_gerrit_home_page.feature"
   },
   {
     "id": "validate-jenkins-home-page",
@@ -162,7 +162,7 @@
         "type": "scenario"
       }
     ],
-    "uri": "validate_jenkins_home_page.feature"
+    "uri": "features/validate_jenkins_home_page.feature"
   },
   {
     "id": "validate-jira-home-page",
@@ -217,7 +217,7 @@
         "type": "scenario"
       }
     ],
-    "uri": "validate_jira_home_page.feature"
+    "uri": "features/validate_jira_home_page.feature"
   },
   {
     "id": "validate-login-page",
@@ -296,7 +296,7 @@
         "type": "scenario"
       }
     ],
-    "uri": "validate_login_page.feature"
+    "uri": "features/validate_login_page.feature"
   },
   {
     "id": "validate-nexus-home-page",
@@ -351,7 +351,7 @@
         "type": "scenario"
       }
     ],
-    "uri": "validate_nexus_home_page.feature"
+    "uri": "features/validate_nexus_home_page.feature"
   },
   {
     "id": "validate-register-developer-page",
@@ -430,7 +430,7 @@
         "type": "scenario"
       }
     ],
-    "uri": "validate_register_developer_page.feature"
+    "uri": "features/validate_register_developer_page.feature"
   },
   {
     "id": "validate-sonar-home-page",
@@ -485,6 +485,6 @@
         "type": "scenario"
       }
     ],
-    "uri": "validate_sonar_home_page.feature"
+    "uri": "features/validate_sonar_home_page.feature"
   }
 ]
